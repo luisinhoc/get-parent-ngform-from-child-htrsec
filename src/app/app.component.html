@@ -1,0 +1,15 @@
+<h3>App Component with a Form</h3>
+<form #form="ngForm">
+  Input: <input [(ngModel)]="name" name="name" required /><br />
+  CustomInput:
+  <app-custom-input
+    [(ngModel)]="customInputValue"
+    name="customInputValue"
+    required
+  ></app-custom-input>
+  <button [disabled]="!form.valid">Submit</button>
+</form>
+<pre
+  >{{ form.value | json }}
+{{ form.valid }}
+</pre>
